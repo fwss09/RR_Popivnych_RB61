@@ -1,10 +1,17 @@
-double calc(double a, int N) {
-    double sum = a;
-    double term = a;
+#include "funcs.h"
 
+double calc(double a, int N) {
+    // початкове значення суми та нульовий член ряду
+    double sum = a;
+    double elem = a;
+
+    // цикл для обчислення та додавання наступних членів ряду від 1 до N
     for (int i = 1; i <= N; i++) {
-        term = term * (a * a) / ((2.0 * i) * (2.0 * i + 1));
-        sum += term;
+        // рекурентне обчислення наступного члена на основі попереднього
+        elem = elem * (a * a) / ((2.0 * i) * (2.0 * i + 1));
+
+        // додаємо поточний член до загальної суми
+        sum += elem;
     }
     return sum;
 }
