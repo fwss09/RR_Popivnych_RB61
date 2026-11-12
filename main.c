@@ -1,5 +1,10 @@
 #include <stdio.h>
+#include "funcs.h"
 
+/**
+ * @brief головна функція програми
+ * @return 0 при успішному завершенні програми
+ */
 int main() {
     double a;
     int N;
@@ -7,25 +12,20 @@ int main() {
     printf("enter a: ");
     scanf("%lf", &a);
 
-    double sum = a;
-    double term = a;
-
     printf("enter N: ");
     scanf("%d", &N);
+
     if(N < 0) {
         printf("n must be greater than 0");
         return 0;
     }
 
 
-    printf("[%lf] --- [%d]", a, N);
+    printf("a - [%lf] | N - [%d]\n", a, N);
 
-    for (int i = 1; i <= N; i++) {
-        term = term * (a * a) / ((2.0 * i) * (2.0 * i + 1));
-        sum += term;
-    } 
+    double res = calc(a, N);
 
-    printf("sum = %lf", sum);
+    printf("sum = %lf", res);
     
     return 0;
 }

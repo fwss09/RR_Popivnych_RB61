@@ -3,4 +3,6 @@ project(RR_Popivnych_RB61 C)
 
 set(CMAKE_C_STANDARD 23)
 
-add_executable(RR_Popivnych_RB61 main.c)
+add_executable(RR_Popivnych_RB61 main.c
+        funcs.h
+        funcs.c)
