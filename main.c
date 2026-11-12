@@ -7,6 +7,9 @@ int main() {
     printf("enter a: ");
     scanf("%lf", &a);
 
+    double sum = a;
+    double term = a;
+
     printf("enter N: ");
     scanf("%d", &N);
     if(N < 0) {
@@ -17,5 +20,12 @@ int main() {
 
     printf("[%lf] --- [%d]", a, N);
 
+    for (int i = 1; i <= N; i++) {
+        term = term * (a * a) / ((2.0 * i) * (2.0 * i + 1));
+        sum += term;
+    } 
+
+    printf("sum = %lf", sum);
+    
     return 0;
 }
